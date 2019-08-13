@@ -34,7 +34,7 @@ export default class SucosConcentracao extends Component {
     return (
       <div className="SucosConcentracao">
         <header className="SucosConcentracao-header">
-          <h2>Sucos para Concentração</h2>
+          <h2>Sucos de Cevadis</h2>
         </header>
         <div className="FiltroSucos">
           <form>
