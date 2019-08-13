@@ -19,10 +19,6 @@ export default class SucosDeCevadis extends Component {
     fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
       .then(this.convertToJSON)
       .then(this.atualizaCervejas);
-
-    this.setState(prevState => ({
-      page: prevState.page + 1
-    }));
   }
 
   handleFiltro = event => {
@@ -39,8 +35,6 @@ export default class SucosDeCevadis extends Component {
     fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
       .then(this.convertToJSON)
       .then(data => {
-        this.props.onCarrgarCervejas(data.length);
-
         this.setState(prevState => ({
           page: prevState.page + 1,
           sucos: [...prevState.sucos, ...data]
