@@ -5,6 +5,7 @@ export default class Header extends React.Component {
     return (
       <header className="header">
         <h1 className="title">React, Programação Reativa e outros Paranauês</h1>
+        Cervejas Carregadas {this.props.cervejas || 0}
       </header>
     );
   }
