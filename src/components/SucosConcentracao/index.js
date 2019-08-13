@@ -27,6 +27,14 @@ export default class SucosConcentracao extends Component {
         <header className="SucosConcentracao-header">
           <h2>Sucos para Concentração</h2>
         </header>
+        <div className="FiltroSucos">
+          <form>
+            <input
+              className="FiltroSucos-input"
+              placeholder="Qual o suco do Piloto?"
+            />
+          </form>
+        </div>
         {sucos.map(this.renderSuco)}
       </div>
     );
