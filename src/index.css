@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 * {
   font-family: sans-serif;
   margin: 0;
@@ -9,19 +11,19 @@ body {
 
 .header {
   position: relative;
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1rem;
-  background-color: #343a40;
+  background-color: #000;
   height: 40px;
   color: #ffffff;
   margin-bottom: 20px;
+
 }
 
-
 .title {
+  font-family: 'Roboto', sans-serif;
   font-size: 20px;
   text-align: center;
 }
