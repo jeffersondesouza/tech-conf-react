@@ -1,0 +1,91 @@
+.SucosConcentracao {
+  max-width: 720px;
+  margin: 50px auto 0 auto;
+}
+
+.SucosConcentracao-header {
+  margin-bottom: 20px;
+
+}
+
+.SucosConcentracao::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.SucosConcentracao-lista-vazia {
+  min-height: 200px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Suco {
+  float: left;
+  width: 150px;
+  height: 265px;
+  margin-bottom: 20px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Suco:not(:last-child) {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.Suco:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.Suco-img-block {
+  position: relative;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.Suco-img {
+  height: 100%;
+}
+
+
+.Suco-nome {
+  color: #888785;
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 5px;
+  flex: 1;
+  max-width: 150px;
+  margin: auto;
+}
+
+.Suco-abv {
+  color: #b1b1b1;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+
+.FiltroSucos {
+  margin-bottom: 30px;
+}
+
+.FiltroSucos-input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid #d8d8d8;
+  outline: none;
+  transition: all .5s;
+}
+
+.FiltroSucos-input:focus {
+  border: 2px solid #8e8e8e;
+}
