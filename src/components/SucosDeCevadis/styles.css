@@ -1,20 +1,20 @@
-.SucosConcentracao {
+.SucosDeCevadis {
   max-width: 720px;
   margin: 50px auto 0 auto;
 }
 
-.SucosConcentracao-header {
+.SucosDeCevadis-header {
   margin-bottom: 20px;
 
 }
 
-.SucosConcentracao::after {
+.SucosDeCevadis::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.SucosConcentracao-lista-vazia {
+.SucosDeCevadis-lista-vazia {
   min-height: 200px;
   margin-bottom: 50px;
   display: flex;

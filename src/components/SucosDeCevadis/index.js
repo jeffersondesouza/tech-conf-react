@@ -4,7 +4,7 @@ import "./styles.css";
 
 import Suco from "./Suco";
 
-export default class SucosConcentracao extends Component {
+export default class SucosDeCevadis extends Component {
   state = { sucos: [] };
 
   componentDidMount() {
@@ -32,8 +32,8 @@ export default class SucosConcentracao extends Component {
   render() {
     const { sucos } = this.state;
     return (
-      <div className="SucosConcentracao">
-        <header className="SucosConcentracao-header">
+      <div className="SucosDeCevadis">
+        <header className="SucosDeCevadis-header">
           <h2>Sucos de Cevadis</h2>
         </header>
         <div className="FiltroSucos">
@@ -45,11 +45,11 @@ export default class SucosConcentracao extends Component {
             />
           </form>
         </div>
-        <div className="SucosConcentracao-lista">
+        <div className="SucosDeCevadis-lista">
           {sucos.length ? (
             sucos.map(this.renderSuco)
           ) : (
-            <div className="SucosConcentracao-lista-vazia">Nenhum suco com este nome</div>
+            <div className="SucosDeCevadis-lista-vazia">Nenhum suco com este nome</div>
           )}
         </div>
       </div>

@@ -5,14 +5,14 @@ import "./index.css";
 
 import Header from "./components/Header";
 import Pilotos from "./components/Pilotos";
-import SucosConcentracao from "./components/SucosConcentracao";
+import SucosDeCevadis from "./components/SucosDeCevadis";
 
 function App() {
   return (
     <div>
       <Header />
       <Pilotos />
-      <SucosConcentracao sucos={mockData} />
+      <SucosDeCevadis sucos={mockData} />
     </div>
   );
 }
