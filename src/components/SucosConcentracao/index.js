@@ -11,6 +11,11 @@ export default class SucosConcentracao extends Component {
     this.setState({ sucos: [...this.props.sucos] });
   }
 
+  handleFiltro = (target) => {
+  console.log('target:', target)
+
+  };
+
   renderSuco = suco => (
     <Suco
       key={suco.id}
@@ -32,6 +37,7 @@ export default class SucosConcentracao extends Component {
             <input
               className="FiltroSucos-input"
               placeholder="Qual o suco do Piloto?"
+              onKeyUp={this.handleFiltro}
             />
           </form>
         </div>
