@@ -5,10 +5,11 @@ import "./styles.css";
 import Suco from "./Suco";
 
 export default class SucosDeCevadis extends Component {
-  state = { sucos: [] };
+  state = { sucos: [], isLoading: false };
 
   componentDidMount() {
     this.setState({ sucos: [...this.props.sucos] });
+    // fetch cervejas
   }
 
   handleFiltro = event => {

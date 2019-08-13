@@ -9,7 +9,7 @@ import Piloto from "./Piloto";
 
 export default class Pilotos extends React.Component {
   state = {
-    mostraPiostos: true
+    mostraPiostos: false
   };
 
   handleEsconderPilotos = () => {
