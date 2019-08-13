@@ -2,11 +2,24 @@
   font-family: sans-serif;
 }
 
+body {
+  background-color: #fbfbfb
+}
+
 .title {
   font-size: 20px;
   text-align: center;
 }
 
+
+/* pilotos-dupla */
+.pilotos-dupla {
+  display: flex;
+  max-width: 550px;
+  margin: auto;
+  margin-bottom: 20px;
+  justify-content: space-around
+}
 
 /* piloto */
 .piloto {
