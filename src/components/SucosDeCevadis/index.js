@@ -6,7 +6,7 @@ import Suco from "./Suco";
 import FiltroForm from "./FiltroForm";
 
 export default class SucosDeCevadis extends Component {
-  state = { sucos: [], isLoading: false };
+  state = { sucos: [], isLoading: false, page: 2 };
 
   componentDidMount() {
     this.setState({ sucos: [...this.props.sucos] });
