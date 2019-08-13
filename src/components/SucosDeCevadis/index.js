@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./styles.css";
 
 import Suco from "./Suco";
+import FiltroForm from "./FiltroForm";
 
 export default class SucosDeCevadis extends Component {
   state = { sucos: [], isLoading: false };
@@ -38,20 +39,14 @@ export default class SucosDeCevadis extends Component {
         <header className="SucosDeCevadis-header">
           <h2>Sucos de Cevadis</h2>
         </header>
-        <div className="FiltroSucos">
-          <form>
-            <input
-              className="FiltroSucos-input"
-              placeholder="Qual a escolhis?"
-              onKeyUp={this.handleFiltro}
-            />
-          </form>
-        </div>
+        <FiltroForm onFiltraCervejas={this.handleFiltro} />
         <div className="SucosDeCevadis-lista">
           {sucos.length ? (
             sucos.map(this.renderSuco)
           ) : (
-            <div className="SucosDeCevadis-lista-vazia">Nenhum suco com este nome</div>
+            <div className="SucosDeCevadis-lista-vazia">
+              Nenhum suco com este nome
+            </div>
           )}
         </div>
       </div>
