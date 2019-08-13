@@ -23,6 +23,12 @@ export default class SucosDeCevadis extends Component {
     this.setState({ sucos: sucosEncontrados });
   };
 
+  handleCarregarCevejas = () => {
+    console.log("carregar:");
+    // fetch cervejas
+    // https://api.punkapi.com/v2/beers?page=2&per_page=3
+  };
+
   renderSuco = suco => (
     <Suco
       key={suco.id}
@@ -40,7 +46,10 @@ export default class SucosDeCevadis extends Component {
           <h2>Sucos de Cevadis</h2>
           <div className="SucosDeCevadis-count">{sucos.length}</div>
         </header>
-        <FiltroForm onFiltraCervejas={this.handleFiltro} />
+        <FiltroForm
+          onFiltraCervejas={this.handleFiltro}
+          onCarregarCevejas={this.handleCarregarCevejas}
+        />
         <div className="SucosDeCevadis-lista">
           {sucos.length ? (
             sucos.map(this.renderSuco)

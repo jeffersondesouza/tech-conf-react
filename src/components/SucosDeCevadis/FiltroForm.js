@@ -12,7 +12,13 @@ export default class FiltroForm extends Component {
           />
         </form>
         <div>
-          <button className="btn btn-primary">Manda vê mais</button>
+          <button
+            type="button"
+            onClick={this.props.onCarregarCevejas}
+            className="btn btn-primary"
+          >
+            Manda vê mais
+          </button>
         </div>
       </div>
     );
