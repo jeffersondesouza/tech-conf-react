@@ -42,7 +42,7 @@ export default class SucosDeCevadis extends Component {
           <form>
             <input
               className="FiltroSucos-input"
-              placeholder="Qual o suco do Piloto?"
+              placeholder="Qual a escolhis?"
               onKeyUp={this.handleFiltro}
             />
           </form>
