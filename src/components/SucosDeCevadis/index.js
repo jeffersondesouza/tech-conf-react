@@ -10,6 +10,7 @@ export default class SucosDeCevadis extends Component {
   componentDidMount() {
     this.setState({ sucos: [...this.props.sucos] });
     // fetch cervejas
+    // https://api.punkapi.com/v2/beers?page=2&per_page=3
   }
 
   handleFiltro = event => {
