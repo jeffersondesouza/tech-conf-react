@@ -7,14 +7,16 @@ import Header from "./components/Header";
 import Pilotos from "./components/Pilotos";
 import SucosDeCevadis from "./components/SucosDeCevadis";
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Pilotos />
-      <SucosDeCevadis sucos={mockData} />
-    </div>
-  );
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Pilotos />
+        <SucosDeCevadis sucos={mockData} />
+      </div>
+    );
+  }
 }
 
 export default App;
