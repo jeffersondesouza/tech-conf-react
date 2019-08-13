@@ -14,6 +14,14 @@
   display: table;
 }
 
+.SucosConcentracao-lista-vazia {
+  min-height: 200px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .Suco {
   float: left;
   width: 150px;

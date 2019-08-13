@@ -11,9 +11,13 @@ export default class SucosConcentracao extends Component {
     this.setState({ sucos: [...this.props.sucos] });
   }
 
-  handleFiltro = (target) => {
-  console.log('target:', target)
+  handleFiltro = event => {
+    const filtro = event.target.value.toLowerCase();
+    const sucosEncontrados = this.props.sucos.filter(suco =>
+      suco.name.toLowerCase().includes(filtro)
+    );
 
+    this.setState({ sucos: sucosEncontrados });
   };
 
   renderSuco = suco => (
@@ -41,7 +45,13 @@ export default class SucosConcentracao extends Component {
             />
           </form>
         </div>
-        {sucos.map(this.renderSuco)}
+        <div className="SucosConcentracao-lista">
+          {sucos.length ? (
+            sucos.map(this.renderSuco)
+          ) : (
+            <div className="SucosConcentracao-lista-vazia">Nenhum suco com este nome</div>
+          )}
+        </div>
       </div>
     );
   }
