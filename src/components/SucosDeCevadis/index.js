@@ -6,12 +6,19 @@ import Suco from "./Suco";
 import FiltroForm from "./FiltroForm";
 
 export default class SucosDeCevadis extends Component {
-  state = { sucos: [], isLoading: false, page: 2 };
+  state = { sucos: [], isLoading: false, page: 1 };
+
+  convertToJSON = res => res.json();
+
+  atualizaCervejas = data => this.setState({ sucos: [...data] });
 
   componentDidMount() {
-    this.setState({ sucos: [...this.props.sucos] });
     // fetch cervejas
     // https://api.punkapi.com/v2/beers?page=2&per_page=3
+
+    fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
+      .then(this.convertToJSON)
+      .then(this.atualizaCervejas);
   }
 
   handleFiltro = event => {
@@ -25,8 +32,14 @@ export default class SucosDeCevadis extends Component {
 
   handleCarregarCevejas = () => {
     console.log("carregar:");
-    // fetch cervejas
-    // https://api.punkapi.com/v2/beers?page=2&per_page=3
+    fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
+      .then(this.convertToJSON)
+      .then(data => {
+        this.setState(prevState => ({
+          page: prevState.page + 1,
+          sucos: [...prevState.sucos, ...data]
+        }));
+      });
   };
 
   renderSuco = suco => (
