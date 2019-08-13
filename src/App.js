@@ -1,4 +1,6 @@
 import React from "react";
+import mockData from "./mock-data";
+
 import "./index.css";
 
 import Header from "./components/Header";
@@ -10,7 +12,7 @@ function App() {
     <div>
       <Header />
       <Pilotos />
-      <SucosConcentracao />
+      <SucosConcentracao sucos={mockData} />
     </div>
   );
 }
