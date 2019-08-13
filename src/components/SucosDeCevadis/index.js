@@ -38,6 +38,7 @@ export default class SucosDeCevadis extends Component {
       <div className="SucosDeCevadis">
         <header className="SucosDeCevadis-header">
           <h2>Sucos de Cevadis</h2>
+          <div className="SucosDeCevadis-count">{sucos.length}</div>
         </header>
         <FiltroForm onFiltraCervejas={this.handleFiltro} />
         <div className="SucosDeCevadis-lista">

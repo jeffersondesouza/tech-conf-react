@@ -11,6 +11,9 @@ export default class FiltroForm extends Component {
             onKeyUp={this.props.onFiltraCervejas}
           />
         </form>
+        <div>
+          <button className="btn btn-primary">Manda vê mais</button>
+        </div>
       </div>
     );
   }
