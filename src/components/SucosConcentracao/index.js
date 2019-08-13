@@ -5,6 +5,12 @@ import "./styles.css";
 import Suco from "./Suco";
 
 export default class SucosConcentracao extends Component {
+  state = { sucos: [] };
+
+  componentDidMount() {
+    this.setState({ sucos: [...this.props.sucos] });
+  }
+
   renderSuco = suco => (
     <Suco
       key={suco.id}
@@ -15,7 +21,7 @@ export default class SucosConcentracao extends Component {
   );
 
   render() {
-    const { sucos } = this.props;
+    const { sucos } = this.state;
     return (
       <div className="SucosConcentracao">
         <header className="SucosConcentracao-header">
