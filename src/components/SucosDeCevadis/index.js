@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-/* import { connect } from "react-redux";
+import { connect } from "react-redux";
 import actions from "../../store/rootActions";
- */
+
 import "./styles.css";
 
 import Suco from "./Suco";
 import FiltroForm from "./FiltroForm";
 
-export default class SucosDeCevadis extends Component {
+class SucosDeCevadis extends Component {
   state = { sucos: [], isLoading: false, page: 1 };
 
   convertToJSON = res => res.json();
@@ -80,3 +80,17 @@ export default class SucosDeCevadis extends Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  sucoDeCevadis: { ...state.sucoDeCevadis }
+});
+
+const mapDispatchToProps = dispatch => ({
+  dispatchLoadSucoDeCevadis: page =>
+    actions.sucoDeCevadis.loadSucoDeCevadisRequest(page)
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(SucosDeCevadis);
