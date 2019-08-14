@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 
-import { connect } from "react-redux";
+/* import { connect } from "react-redux";
 import actions from "../../store/rootActions";
-
+ */
 import "./styles.css";
 
 import Suco from "./Suco";
 import FiltroForm from "./FiltroForm";
 
-class SucosDeCevadis extends Component {
+export default class SucosDeCevadis extends Component {
   state = { sucos: [], isLoading: false, page: 1 };
 
   convertToJSON = res => res.json();
@@ -17,14 +17,11 @@ class SucosDeCevadis extends Component {
     this.setState(ps => ({ sucos: [...data, ...ps.sucos], page: ps.page + 1 }));
 
   componentDidMount() {
-    /*     // fetch cervejas
-    // https://api.punkapi.com/v2/beers?page=2&per_page=3
-
     fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
       .then(this.convertToJSON)
-      .then(this.atualizaCervejas); */
+      .then(this.atualizaCervejas);
 
-    this.props.dispatchLoadSucoDeCevadis(this.state.page);
+    // this.props.dispatchLoadSucoDeCevadis(this.state.page);
   }
 
   handleFiltro = event => {
@@ -83,7 +80,7 @@ class SucosDeCevadis extends Component {
   }
 }
 
-const mapStateToProps = state => ({
+/* const mapStateToProps = state => ({
   sucoDeCevadis: { ...state.sucoDeCevadis }
 });
 
@@ -96,3 +93,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SucosDeCevadis);
+ */
