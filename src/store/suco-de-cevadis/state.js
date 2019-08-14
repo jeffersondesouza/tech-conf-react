@@ -1,5 +1,5 @@
 export default {
-  lista: [],
+  sucos: [],
   total: 0,
   page: 1
 };

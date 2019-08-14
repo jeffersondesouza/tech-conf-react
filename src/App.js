@@ -1,5 +1,4 @@
 import React from "react";
-import mockData from "./mock-data";
 
 import "./index.css";
 
@@ -13,7 +12,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Pilotos />
-        <SucosDeCevadis sucos={mockData} />
+        <SucosDeCevadis/>
       </div>
     );
   }

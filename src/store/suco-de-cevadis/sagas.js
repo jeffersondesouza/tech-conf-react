@@ -4,11 +4,15 @@ import actions from "./actions";
 import Types from "./constants";
 
 function* loadLoadCevadis(action) {
-  console.log("action:", action);
   try {
-    yield fetch(
+    const res = yield fetch(
       `https://api.punkapi.com/v2/beers?page=${action.payload}&per_page=3`
     );
+
+    const data = yield res.json();
+
+    yield put(actions.loadSucoDeCevadisSuccess(data));
+
   } catch (error) {}
 }
 
