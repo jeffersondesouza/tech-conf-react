@@ -10,13 +10,16 @@ export default class SucosDeCevadis extends Component {
 
   convertToJSON = res => res.json();
 
-  atualizaCervejas = data => this.setState({ sucos: [...data] });
+  atualizaCervejas = data =>
+    this.setState(ps => ({ sucos: [...data, ...ps.sucos], page: ps.page + 1 }));
 
   componentDidMount() {
     // fetch cervejas
     // https://api.punkapi.com/v2/beers?page=2&per_page=3
 
-    fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
+    fetch(
+      `https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`
+    )
       .then(this.convertToJSON)
       .then(this.atualizaCervejas);
   }
