@@ -1,4 +1,5 @@
 export default {
   lista: [],
-  total: 0
+  total: 0,
+  page: 1
 };
