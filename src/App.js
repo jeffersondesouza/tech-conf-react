@@ -10,8 +10,8 @@ import SucosDeCevadis from "./components/SucosDeCevadis";
 import Rogerinho from "./components/Rogerinho";
 import Maurilio from "./components/Maurilio";
 import Renan from "./components/Renan";
-import Julinho from "./components/Julinho"; */
-
+import Julinho from "./components/Julinho";
+ */
 class App extends React.Component {
   render() {
     return (
@@ -26,12 +26,10 @@ class App extends React.Component {
 
 export default App;
 
-{
-  /* <Switch>
+/* <Switch>
 <Route exact path="/" component={Home} />
 <Route exact path="/rogerinho" component={Rogerinho} />
 <Route exact path="/maurilio" component={Maurilio} />
 <Route exact path="/renan" component={Renan} />
 <Route exact path="/julinho" component={Julinho} />
 </Switch> */
-}
