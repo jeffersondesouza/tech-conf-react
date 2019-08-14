@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+/* import { connect } from "react-redux";
+import actions from "../../store/rootActions";
+ */
 import "./styles.css";
 
 import Suco from "./Suco";
@@ -17,9 +20,7 @@ export default class SucosDeCevadis extends Component {
     // fetch cervejas
     // https://api.punkapi.com/v2/beers?page=2&per_page=3
 
-    fetch(
-      `https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`
-    )
+    fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
       .then(this.convertToJSON)
       .then(this.atualizaCervejas);
   }
@@ -42,7 +43,6 @@ export default class SucosDeCevadis extends Component {
           page: prevState.page + 1,
           sucos: [...prevState.sucos, ...data]
         }));
-
       });
   };
 
