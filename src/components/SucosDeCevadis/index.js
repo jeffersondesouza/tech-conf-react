@@ -1,16 +1,14 @@
 import React, { Component } from "react";
 
-/* 
 import { connect } from "react-redux";
 import actions from "../../store/rootActions";
- */
 
 import "./styles.css";
 
 import Suco from "./Suco";
 import FiltroForm from "./FiltroForm";
 
-export default class SucosDeCevadis extends Component {
+class SucosDeCevadis extends Component {
   state = { sucos: [], isLoading: false, page: 1 };
 
   convertToJSON = res => res.json();
@@ -19,11 +17,7 @@ export default class SucosDeCevadis extends Component {
     this.setState(ps => ({ sucos: [...data, ...ps.sucos], page: ps.page + 1 }));
 
   componentDidMount() {
-    fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
-      .then(this.convertToJSON)
-      .then(this.atualizaCervejas);
-
-    // this.props.dispatchLoadSucoDeCevadis(this.state.page);
+    this.props.dispatchLoadSucoDeCevadis(this.state.page);
   }
 
   handleFiltro = event => {
@@ -36,15 +30,7 @@ export default class SucosDeCevadis extends Component {
   };
 
   handleCarregarCevejas = () => {
-    console.log("carregar:");
-    fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
-      .then(this.convertToJSON)
-      .then(data => {
-        this.setState(prevState => ({
-          page: prevState.page + 1,
-          sucos: [...prevState.sucos, ...data]
-        }));
-      });
+    this.props.dispatchLoadSucoDeCevadis(this.state.page);
   };
 
   renderSuco = suco => (
@@ -82,7 +68,7 @@ export default class SucosDeCevadis extends Component {
   }
 }
 
-/* const mapStateToProps = state => ({
+const mapStateToProps = state => ({
   sucoDeCevadis: { ...state.sucoDeCevadis }
 });
 
@@ -95,4 +81,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(SucosDeCevadis);
- */
