@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
-/* import { connect } from "react-redux";
+/* 
+import { connect } from "react-redux";
 import actions from "../../store/rootActions";
  */
+
 import "./styles.css";
 
 import Suco from "./Suco";
