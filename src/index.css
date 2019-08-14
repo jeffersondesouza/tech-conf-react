@@ -118,3 +118,7 @@ body {
   justify-content: flex-end;
   padding: 0 30px;
 }
+
+.avatar {
+  width: 300px;
+}
