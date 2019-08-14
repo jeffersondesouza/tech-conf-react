@@ -8,10 +8,10 @@ const sucoDeCevadisReducer = (state = INITIAL_STATE, action) => {
 
     case Types.LOAD_SUCO_DE_CEVADIS_SUCCESS:
       return {
-        ...state
-        /* sucos: [...state.sucos, ...action.payload],
+        ...state,
+        sucos: [...state.sucos, ...action.payload],
         total: [...state.sucos, ...action.payload].length,
-        page: state.page + 1 */
+        page: state.page + 1
       };
 
     default:
