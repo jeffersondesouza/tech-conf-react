@@ -42,6 +42,7 @@ export default class SucosDeCevadis extends Component {
           page: prevState.page + 1,
           sucos: [...prevState.sucos, ...data]
         }));
+
       });
   };
 
