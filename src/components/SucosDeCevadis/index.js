@@ -17,12 +17,14 @@ class SucosDeCevadis extends Component {
     this.setState(ps => ({ sucos: [...data, ...ps.sucos], page: ps.page + 1 }));
 
   componentDidMount() {
-    // fetch cervejas
+    /*     // fetch cervejas
     // https://api.punkapi.com/v2/beers?page=2&per_page=3
 
     fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=3`)
       .then(this.convertToJSON)
-      .then(this.atualizaCervejas);
+      .then(this.atualizaCervejas); */
+
+    this.props.dispatchLoadSucoDeCevadis(this.state.page);
   }
 
   handleFiltro = event => {
@@ -87,7 +89,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   dispatchLoadSucoDeCevadis: page =>
-    actions.sucoDeCevadis.loadSucoDeCevadisRequest(page)
+    dispatch(actions.sucoDeCevadis.loadSucoDeCevadisRequest(page))
 });
 
 export default connect(
