@@ -1,12 +1,14 @@
 import INITIAL_STATE from "./state";
 import Types from "./constants";
 
-
-const authReducer = (state = INITIAL_STATE, action) => {
+const sucoDeCevadisReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case Types.LOAD_SUCO_DE_CEVADIS_REQUEST:
+      return state;
+
     default:
       return state;
   }
 };
 
-export default authReducer;
+export default sucoDeCevadisReducer;
