@@ -112,3 +112,13 @@ body {
   background-color: #0069d9;
   border-color: #0062cc;
 }
+
+.Pilotos-toogle {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 30px;
+}
+
+.avatar {
+  width: 300px;
+}

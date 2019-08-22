@@ -1,20 +1,35 @@
 import React from "react";
-import mockData from "./mock-data";
+import { Switch, Route } from "react-router-dom";
 
 import "./index.css";
 
 import Header from "./components/Header";
 import Pilotos from "./components/Pilotos";
-import SucosConcentracao from "./components/SucosConcentracao";
+import SucosDeCevadis from "./components/SucosDeCevadis";
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Pilotos />
-      <SucosConcentracao sucos={mockData} />
-    </div>
-  );
+import Home from "./components/Home";
+import Rogerinho from "./components/Rogerinho";
+import Maurilio from "./components/Maurilio";
+import Renan from "./components/Renan";
+import Julinho from "./components/Julinho";
+
+class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/rogerinho" component={Rogerinho} />
+          <Route exact path="/maurilio" component={Maurilio} />
+          <Route exact path="/renan" component={Renan} />
+          <Route exact path="/julinho" component={Julinho} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default App;
+
+/**/
