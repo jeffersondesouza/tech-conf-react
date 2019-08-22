@@ -38,8 +38,10 @@ export default class Pilotos extends React.Component {
                 pilotoImg={rogerinho}
                 nome="Rogerinho do Ingá"
                 bio="Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Interagi no mé, "
+                path="/rogerinho"
               />
               <Piloto
+                path="/maurilio"
                 pilotoImg={renan}
                 nome="Renan"
                 bio="Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Interagi no mé, "
@@ -47,11 +49,13 @@ export default class Pilotos extends React.Component {
             </div>
             <div className="pilotos-dupla">
               <Piloto
+                path="/renan"
                 pilotoImg={maurilio}
                 nome="Maurilio"
                 bio="Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Interagi no mé, "
               />
               <Piloto
+                path="/julinho"
                 pilotoImg={julinho}
                 nome="Julinho"
                 bio="Mussum Ipsum, cacilds vidis litro abertis. Delegadis gente finis, bibendum egestas augue arcu ut est. Interagi no mé, "
