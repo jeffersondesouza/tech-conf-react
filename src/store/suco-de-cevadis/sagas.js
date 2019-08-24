@@ -2,17 +2,28 @@ import { takeEvery, put, all } from "redux-saga/effects";
 
 import actions from "./actions";
 import Types from "./constants";
+import CervejaRepository from "../../models/cerveja/Repository";
+import CervejaHttpMapper from "../../models/cerveja/HttpMapper";
+
+const HttpFetcher = {
+  request: ({ method, path, data }, mapper) => {
+    // const methodCap = mayBeString(method).unit('post').toLowerCase();
+    const requestMethod = method.toLowerCase();
+
+    return fetch(path, { method: requestMethod })
+      .then(res => res.json())
+      .then(mapper);
+  }
+};
 
 function* loadLoadCevadis(action) {
   try {
-    const res = yield fetch(
-      `https://api.punkapi.com/v2/beers?page=${action.payload}&per_page=3`
+    const data = yield HttpFetcher.request(
+      CervejaRepository.getCervejas(action.payload),
+      CervejaHttpMapper.fromLoadCervejas
     );
 
-    const data = yield res.json();
-
     yield put(actions.loadSucoDeCevadisSuccess(data));
-
   } catch (error) {}
 }
 

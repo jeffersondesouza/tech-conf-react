@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Suco extends Component {
   render() {
-    const { nome, imageUrl, abv } = this.props;
+    const { nome, imageUrl, abv, attenuationLevel } = this.props;
 
     return (
       <div className="Suco">
@@ -11,6 +11,8 @@ export default class Suco extends Component {
         </div>
         <div className="Suco-nome">{nome}</div>
         <div className="Suco-abv">Teor {abv}</div>
+        <div className="Suco-abv">Atenuação {attenuationLevel}</div>
+        
       </div>
     );
   }

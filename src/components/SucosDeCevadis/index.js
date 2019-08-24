@@ -37,8 +37,9 @@ class SucosDeCevadis extends Component {
     <Suco
       key={suco.id}
       nome={suco.name}
-      imageUrl={suco.image_url}
+      imageUrl={suco.imageUrl}
       abv={suco.abv}
+      attenuationLevel={suco.attenuationLevel}
     />
   );
 
