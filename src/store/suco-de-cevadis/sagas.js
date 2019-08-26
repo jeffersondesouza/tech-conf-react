@@ -5,20 +5,11 @@ import Types from "./constants";
 import CervejaRepository from "../../models/cerveja/Repository";
 import CervejaHttpMapper from "../../models/cerveja/HttpMapper";
 
-const HttpFetcher = {
-  request: ({ method, path, data }, mapper) => {
-    // const methodCap = mayBeString(method).unit('post').toLowerCase();
-    const requestMethod = method.toLowerCase();
-
-    return fetch(path, { method: requestMethod })
-      .then(res => res.json())
-      .then(mapper);
-  }
-};
+import Http from "../../utils/Http";
 
 function* loadLoadCevadis(action) {
   try {
-    const data = yield HttpFetcher.request(
+    const data = yield Http.request(
       CervejaRepository.getCervejas(action.payload),
       CervejaHttpMapper.fromLoadCervejas
     );
